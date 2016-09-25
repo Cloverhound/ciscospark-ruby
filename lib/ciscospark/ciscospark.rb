@@ -1,7 +1,7 @@
 require "httparty"
 
 module Ciscospark
-  class Spark < ActiveRecord::Base
+  class Spark
       def self.get_rooms(token)
         response = HTTParty.get("https://api.ciscospark.com/v1/rooms", headers: {"Authorization" => "Bearer " + token, 'Content-Type' => 'application/json', 'Accept' => 'application/json'})
         return response
