@@ -139,7 +139,7 @@ class Spark
       end
 
       def self.update_team(token, name)
-        response = HTTParty.put("https://api.ciscospark.com/v1/teams/" + team_id.to_s,, headers: {"Authorization" => "Bearer " + token, 'Content-Type' => 'application/json', 'Accept' => 'application/json'}, :body => { "name" => name}.to_json)
+        response = HTTParty.put("https://api.ciscospark.com/v1/teams/" + team_id.to_s, headers: {"Authorization" => "Bearer " + token, 'Content-Type' => 'application/json', 'Accept' => 'application/json'}, :body => { "name" => name}.to_json)
         return response
       end
 
