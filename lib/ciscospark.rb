@@ -1,7 +1,6 @@
 require "httparty"
 
-module Ciscospark
-  class Spark
+class Spark
       def self.get_rooms(token)
         response = HTTParty.get("https://api.ciscospark.com/v1/rooms", headers: {"Authorization" => "Bearer " + token, 'Content-Type' => 'application/json', 'Accept' => 'application/json'})
         return response
@@ -97,5 +96,4 @@ module Ciscospark
         response = HTTParty.delete("https://api.ciscospark.com/v1/memberships/" + id.to_s, headers: {"Authorization" => "Bearer " + token, 'Content-Type' => 'application/json', 'Accept' => 'application/json'})
         return response
       end
-    end
 end
