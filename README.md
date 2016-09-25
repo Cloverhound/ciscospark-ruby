@@ -21,9 +21,7 @@ Delete Room -> Spark.delete_room(access_token,room_id)
 
 - Call it with your access_token
 
-`Spark.get_teams(access_token)
-
-=> {"items"=>
+`Spark.get_teams(access_token) => {"items"=>
   [{"id"=>"Y2lzY29zcGFyazovL3VzL1RFQU0vNWQ5ZDkyZTAtODA0Ny0xMWU2LTg0ZGMtMGQ3MGJjNGNlYWFi",
     "name"=>"2016 Cisco Americas Customer Care Sales Summit",
     "creatorId"=>"Y2lzY29zcGFyazovL3VzL1BFT1BMRS9iMTRhYjM5NS02YjJkLTRhOTEtYjI5OC0zNGU2YmNlMzYwOGI",
@@ -41,5 +39,3 @@ Enjoy!
 
 
 That's pretty much it!
-
-[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/intridea/omniauth-oauth2/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
