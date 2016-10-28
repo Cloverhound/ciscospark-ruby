@@ -23,7 +23,7 @@ class Spark
 
       def self.get_rooms(token,max=10,team_id=nil,type=nil)
         @options = { headers: {"Authorization" => "Bearer " + token, 'Content-Type' => 'application/json', 'Accept' => 'application/json'}, query: {max: max} }
-        response = HTTParty.get("https://api.ciscospark.com/v1/messages", @options)
+        response = HTTParty.get("https://api.ciscospark.com/v1/rooms", @options)
         return response
       end
 
