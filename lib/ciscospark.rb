@@ -21,8 +21,9 @@ class Spark
 
       #Rooms API
 
-      def self.get_rooms(token)
-        response = HTTParty.get("https://api.ciscospark.com/v1/rooms", headers: {"Authorization" => "Bearer " + token, 'Content-Type' => 'application/json', 'Accept' => 'application/json'})
+      def self.get_rooms(token,max=10,team_id=nil,type=nil)
+        @options = { headers: {"Authorization" => "Bearer " + token, 'Content-Type' => 'application/json', 'Accept' => 'application/json'}, query: {max: max} }
+        response = HTTParty.get("https://api.ciscospark.com/v1/messages", @options)
         return response
       end
 
@@ -58,7 +59,7 @@ class Spark
 
       #Membership API
 
-      def self.get_memberships(token, room_id)
+      def self.get_memberships(token,room_id,max=10,person_id = nil,person_email=nil)
         @options = { headers: {"Authorization" => "Bearer " + token, 'Content-Type' => 'application/json', 'Accept' => 'application/json'}, query: {roomId: room_id} }
         response = HTTParty.get("https://api.ciscospark.com/v1/memberships", @options)
         return response
