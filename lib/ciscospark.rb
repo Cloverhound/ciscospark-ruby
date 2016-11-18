@@ -116,6 +116,12 @@ class Spark
                  "text" => message, "file" => file}.to_json)
         return response
       end
+      
+      def self.post_message_markdown(token, room_id, markdown)
+        response = HTTParty.post("https://api.ciscospark.com/v1/messages", headers: {"Authorization" => "Bearer " + token, 'Content-Type' => 'application/json', 'Accept' => 'application/json'}, :body => { "roomId" => room_id,
+                 "markdown" => markdown}.to_json)
+        return response
+      end
 
       def self.delete_message(token,id)
         response = HTTParty.delete("https://api.ciscospark.com/v1/messages/" + id.to_s, headers: {"Authorization" => "Bearer " + token, 'Content-Type' => 'application/json', 'Accept' => 'application/json'})
